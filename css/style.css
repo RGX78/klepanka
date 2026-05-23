@@ -144,17 +144,30 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Znaczek LONDON */
-.stamp {
+/* Kontener znaczka - przycina wszystko do ksztaltu karty */
+.stamp-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 147%;
   height: auto;
-  opacity: 1;
+  aspect-ratio: 900 / 675;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
+}
+
+/* Znaczek LONDON */
+.stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .stamp2 {
@@ -162,11 +175,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 118%;
+  width: 80%;
   height: auto;
   opacity: 0.08;
   pointer-events: none;
-  z-index: 0;
+}
+
+.stamp3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
 }
 
 .face .en, .face .pl, .face .hint {
