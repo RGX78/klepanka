@@ -311,6 +311,76 @@ function spawnEmoji(emoji) {
   setTimeout(() => el.remove(), 800);
 }
 
+function exportProgress() {
+  const data = {
+    settings: settings,
+    activeDeck: activeDeck,
+    progress: {}
+  };
+  
+  // Gather progress for ALL decks
+  const decks = ['finalfantasy','baldursgate','witcher','cyberpunk','poe','oncehuman','sevendays','xanth','residentevil'];
+  for (const d of decks) {
+    const key = 'klepanka_progress_' + d;
+    try {
+      const p = JSON.parse(localStorage.getItem(key));
+      if (p && Object.keys(p).length) data.progress[d] = p;
+    } catch(e) {}
+  }
+  
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'klepanka_save_' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  showToast('Postęp zapisany! ⬇');
+}
+
+function importProgress(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      
+      // Restore settings
+      if (data.settings) {
+        settings = { ...settings, ...data.settings };
+        saveSettings();
+        applyTheme();
+        applyAnimation();
+        applySound();
+      }
+      
+      // Restore progress for all decks
+      if (data.progress) {
+        for (const [deck, prog] of Object.entries(data.progress)) {
+          const key = 'klepanka_progress_' + deck;
+          localStorage.setItem(key, JSON.stringify(prog));
+        }
+      }
+      
+      // Restore active deck
+      if (data.activeDeck) {
+        localStorage.setItem('klepanka_active_deck', data.activeDeck);
+        document.getElementById('deckSelect').value = data.activeDeck;
+      }
+      
+      showToast('Postęp wczytany! ⬆');
+      
+      // Reload current deck
+      const d = localStorage.getItem('klepanka_active_deck') || 'finalfantasy';
+      changeDeck(d);
+    } catch(err) {
+      showToast('Błąd pliku!', true);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
 function showToast(msg, isError = false) {
   const t = document.getElementById('toast');
   t.textContent = msg;

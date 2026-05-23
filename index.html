@@ -34,6 +34,9 @@
     <button class="control-btn" id="animToggle" onclick="toggleAnimation()" title="Graj/Wstrzymaj animację">
       <span id="animIcon"></span>
     </button>
+    <button class="control-btn" onclick="exportProgress()" title="Zapisz postęp do pliku">⬇</button>
+    <button class="control-btn" onclick="document.getElementById('importFile').click()" title="Wczytaj postęp z pliku">⬆</button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importProgress(event)">
   </div>
 </div>
 
