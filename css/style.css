@@ -136,6 +136,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow: hidden;
 
   border: 16px solid transparent;
 }
