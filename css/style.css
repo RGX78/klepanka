@@ -184,8 +184,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(10deg);
-  width: 85%;
+  transform: translate(-25%, -50%) rotate(10deg);
+  width: 65%;
   height: auto;
   opacity: 0.06;
   pointer-events: none;
