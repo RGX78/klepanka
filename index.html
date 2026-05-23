@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Klepanka EN-PL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="header-controls">
+  <select id="deckSelect" onchange="changeDeck(this.value)">
+    <option value="finalfantasy">Final Fantasy EN-PL</option>
+    <option value="baldursgate">Baldur's Gate EN-PL</option>
+    <option value="witcher">The Witcher EN-PL</option>
+    <option value="cyberpunk">Cyberpunk EN-PL</option>
+    <option value="poe">Path of Exile EN-PL</option>
+    <option value="oncehuman">Once Human EN-PL</option>
+    <option value="sevendays">7 Days to Die EN-PL</option>
+    <option value="xanth">Xanth EN-PL</option>
+    <option value="residentevil">Resident Evil EN-PL</option>
+  </select>
+  
+  <div class="top-right-controls">
+    <button class="control-btn" id="soundToggle" onclick="toggleSound()" title="Wycisz/Włącz lektora">
+      <span id="soundIcon"></span>
+    </button>
+    <button class="control-btn" id="themeToggle" onclick="toggleTheme()" title="Przełącz motyw">
+      <span id="themeIcon"></span>
+    </button>
+    <button class="control-btn" id="animToggle" onclick="toggleAnimation()" title="Graj/Wstrzymaj animację">
+      <span id="animIcon"></span>
+    </button>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="card" id="flashcard" onclick="flipCard()">
+    <div class="face front">
+      <div class="en" id="wordFront">Loading...</div>
+      <div class="hint">kliknij lub naciśnij ↓ aby odwrócić</div>
+    </div>
+    <div class="face back">
+      <div class="pl" id="wordBack">Ładowanie...</div>
+      <div class="hint">kliknij lub naciśnij ↓ aby odwrócić</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-val" id="statKnown">0</span>
+    <span class="stat-lbl">umiem</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-val" id="statLeft">0</span>
+    <span class="stat-lbl">zostało</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-val" id="statPct">0%</span>
+    <span class="stat-lbl">opan.</span>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="action-buttons">
+  <button class="action-btn nope" id="btnNope" onclick="markNope()">✕ Nie wiem</button>
+  <button class="action-btn know" id="btnKnow" onclick="markKnown()">✓ Umiem</button>
+</div>
+
+<div class="key-hints">
+  <span><kbd>←</kbd> nie wiem</span>
+  <span><kbd>↓</kbd> odwróć</span>
+  <span><kbd>→</kbd> umiem</span>
+  <span><kbd>R</kbd> reset</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Application Logic -->
+<script src="js/app.js" defer></script>
+</body>
+</html>
