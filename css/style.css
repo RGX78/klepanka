@@ -156,6 +156,22 @@ body {
   transform: rotateY(180deg);
 }
 
+/* Znaczek LONDON - perforowany stempel na karcie */
+.stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.face .en, .face .pl, .face .hint {
+  position: relative;
+  z-index: 1;
+}
+
 .front .en {
   font-family: 'Special Elite', monospace;
   font-size: 30px;
