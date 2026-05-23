@@ -493,3 +493,25 @@ body.light-theme.residentevil-active::before {
   transform: scale(1.05);
 }
 
+/* Mobile: wrap header controls */
+@media (max-width: 520px) {
+  .header-controls {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-controls select {
+    flex: 1 1 100%;
+    order: 1;
+  }
+  .top-right-controls {
+    order: 2;
+    gap: 6px;
+  }
+  .control-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
