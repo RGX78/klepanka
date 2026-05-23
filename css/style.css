@@ -155,6 +155,14 @@ body {
   aspect-ratio: 900 / 675;
   pointer-events: none;
   z-index: 0;
+  -webkit-mask-image: url('stamp.png');
+  mask-image: url('stamp.png');
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 /* Znaczek LONDON */
