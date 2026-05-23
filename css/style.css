@@ -119,7 +119,6 @@ body {
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .card.flipped {
