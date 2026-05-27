@@ -399,7 +399,7 @@ body::before {
 }
 
 /* Ensure background of body is transparent so body::before is visible */
-body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.fallout-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active {
+body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.fallout-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active, body.diablo-active {
   background-color: transparent !important;
 }
 
@@ -553,6 +553,20 @@ body.residentevil-active::before {
 
 body.light-theme.residentevil-active::before {
   background-image: linear-gradient(rgba(243, 244, 246, 0.44), rgba(243, 244, 246, 0.44)), url('../residen evil.png');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* Diablo Background styling */
+body.diablo-active::before {
+  opacity: 1;
+  background-image: linear-gradient(rgba(10, 0, 0, 0.65), rgba(10, 0, 0, 0.65)), url('../diablo.png');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+body.light-theme.diablo-active::before {
+  background-image: linear-gradient(rgba(243, 240, 240, 0.65), rgba(243, 240, 240, 0.65)), url('../diablo.png');
   filter: blur(5px);
   transform: scale(1.05);
 }

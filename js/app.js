@@ -319,7 +319,7 @@ function exportProgress() {
   };
   
   // Gather progress for ALL decks
-  const decks = ['finalfantasy','baldursgate','fallout','witcher','cyberpunk','poe','oncehuman','sevendays','xanth','lotr','residentevil'];
+  const decks = ['finalfantasy','baldursgate','fallout','witcher','cyberpunk','poe','oncehuman','sevendays','xanth','lotr','residentevil','diablo'];
   for (const d of decks) {
     const key = 'klepanka_progress_' + d;
     try {
@@ -414,6 +414,7 @@ function changeDeck(deckName) {
     document.body.classList.toggle('xanth-active', deckName === 'xanth');
     document.body.classList.toggle('lotr-active', deckName === 'lotr');
     document.body.classList.toggle('residentevil-active', deckName === 'residentevil');
+    document.body.classList.toggle('diablo-active', deckName === 'diablo');
     
     loadProgress();
     applyFilter();
