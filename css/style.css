@@ -476,7 +476,7 @@ body.light-theme.baldursgate-active::before {
 /* Fallout Background styling */
 body.fallout-active::before {
   opacity: 1;
-  background-image: linear-gradient(rgba(20, 30, 20, 0.55), rgba(20, 30, 20, 0.55)), url('../fallout.jpg');
+  background-image: linear-gradient(rgba(20, 30, 20, 0.55), rgba(20, 30, 20, 0.55)), url('../fallout.png');
   filter: blur(5px);
   transform: scale(1.05);
 }
