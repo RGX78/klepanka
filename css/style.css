@@ -399,7 +399,7 @@ body::before {
 }
 
 /* Ensure background of body is transparent so body::before is visible */
-body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active {
+body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.fallout-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active {
   background-color: transparent !important;
 }
 
@@ -469,6 +469,20 @@ body.baldursgate-active::before {
 
 body.light-theme.baldursgate-active::before {
   background-image: linear-gradient(rgba(243, 244, 246, 0.44), rgba(243, 244, 246, 0.44)), url('../BaldursGate.jpg');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* Fallout Background styling */
+body.fallout-active::before {
+  opacity: 1;
+  background-image: linear-gradient(rgba(20, 30, 20, 0.55), rgba(20, 30, 20, 0.55)), url('../fallout.jpg');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+body.light-theme.fallout-active::before {
+  background-image: linear-gradient(rgba(243, 244, 246, 0.55), rgba(243, 244, 246, 0.55)), url('../fallout.jpg');
   filter: blur(5px);
   transform: scale(1.05);
 }
