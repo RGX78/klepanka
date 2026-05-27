@@ -399,7 +399,7 @@ body::before {
 }
 
 /* Ensure background of body is transparent so body::before is visible */
-body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.residentevil-active {
+body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active {
   background-color: transparent !important;
 }
 
@@ -511,6 +511,20 @@ body.xanth-active::before {
 
 body.light-theme.xanth-active::before {
   background-image: linear-gradient(rgba(243, 244, 246, 0.44), rgba(243, 244, 246, 0.44)), url('../xanth.jpg');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* LotR Background styling */
+body.lotr-active::before {
+  opacity: 1;
+  background-image: linear-gradient(rgba(15, 15, 26, 0.55), rgba(15, 15, 26, 0.55)), url('../lotr.jpg');
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+body.light-theme.lotr-active::before {
+  background-image: linear-gradient(rgba(243, 244, 246, 0.55), rgba(243, 244, 246, 0.55)), url('../lotr.jpg');
   filter: blur(5px);
   transform: scale(1.05);
 }
