@@ -297,7 +297,7 @@ print(f"Total cards: {len(poe_deck)}")
 import os
 out_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../js/decks/poe.js"))
 with open(out_path, 'w', encoding='utf-8') as f:
-    f.write("const WORDS_POE = [\n")
+    f.write("var WORDS_POE = [\n")
     for en, pl in poe_deck:
         f.write(f'  {{ en: "{en}", pl: "{pl}" }},\n')
     f.write("];\n")

@@ -319,7 +319,7 @@ function exportProgress() {
   };
   
   // Gather progress for ALL decks
-  const decks = ['finalfantasy','baldursgate','fallout','witcher','cyberpunk','poe','oncehuman','sevendays','xanth','lotr','residentevil','diablo'];
+  const decks = ['finalfantasy','baldursgate','fallout','witcher','cyberpunk','poe','poe_cards','oncehuman','sevendays','xanth','lotr','residentevil','diablo'];
   for (const d of decks) {
     const key = 'klepanka_progress_' + d;
     try {
@@ -404,6 +404,7 @@ function changeDeck(deckName) {
     
     // Toggle class for Path of Exile and 7 Days to Die visual design testing
     document.body.classList.toggle('poe-active', deckName === 'poe');
+    document.body.classList.toggle('poe_cards-active', deckName === 'poe_cards');
     document.body.classList.toggle('sevendays-active', deckName === 'sevendays');
     document.body.classList.toggle('oncehuman-active', deckName === 'oncehuman');
     document.body.classList.toggle('finalfantasy-active', deckName === 'finalfantasy');

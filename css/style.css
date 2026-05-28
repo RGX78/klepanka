@@ -399,19 +399,19 @@ body::before {
 }
 
 /* Ensure background of body is transparent so body::before is visible */
-body.poe-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.fallout-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active, body.diablo-active {
+body.poe-active, body.poe_cards-active, body.sevendays-active, body.oncehuman-active, body.finalfantasy-active, body.baldursgate-active, body.fallout-active, body.cyberpunk-active, body.witcher-active, body.xanth-active, body.lotr-active, body.residentevil-active, body.diablo-active {
   background-color: transparent !important;
 }
 
 /* Path of Exile Background styling with blur(7px) */
-body.poe-active::before {
+body.poe-active::before, body.poe_cards-active::before {
   opacity: 1;
   background-image: linear-gradient(rgba(15, 15, 26, 0.44), rgba(15, 15, 26, 0.44)), url('../exalted.png');
   filter: blur(7px);
   transform: scale(1.05); /* Prevents sharp/white edges during blur */
 }
 
-body.light-theme.poe-active::before {
+body.light-theme.poe-active::before, body.light-theme.poe_cards-active::before {
   background-image: linear-gradient(rgba(243, 244, 246, 0.44), rgba(243, 244, 246, 0.44)), url('../exalted.png');
   filter: blur(7px);
   transform: scale(1.05);
